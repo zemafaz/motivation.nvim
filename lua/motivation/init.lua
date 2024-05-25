@@ -1,5 +1,10 @@
 local M = {}
 
+local skip_blank_and_commented_lines = function(line)
+    local first_non_blank_character = line:match("[^%s]")
+    return first_non_blank_character and first_non_blank_character ~= "#"
+end
+
 M.current_rules = {}
 
 M.inspire_me = function()
@@ -17,7 +22,9 @@ M.setup = function(config)
     end
     if config.file then
         for rule in io.lines(config.file) do
-            table.insert(M.current_rules, rule)
+            if skip_blank_and_commented_lines(rule) then
+                table.insert(M.current_rules, rule)
+            end
         end
     end
 
