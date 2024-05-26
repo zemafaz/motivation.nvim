@@ -15,8 +15,8 @@ M.inspire_me = function()
 end
 
 M.setup = function(config)
-    if config.rules then
-        for _, rule in ipairs(config.rules) do
+    if config.lines then
+        for _, rule in ipairs(config.lines) do
             table.insert(M.current_rules, rule)
         end
     end
