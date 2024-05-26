@@ -11,7 +11,7 @@ M.inspire_me = function()
     local number_rules = #M.current_rules
     math.randomseed(os.time())
     local i = math.random(number_rules)
-    print(M.current_rules[i] .. "\n")
+    print(M.current_rules[i] .. "\n\n")
 end
 
 M.setup = function(config)
