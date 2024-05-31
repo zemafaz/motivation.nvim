@@ -54,9 +54,13 @@ require("motivation").setup({
 
 ```lua
 require("motivation").setup({
-    lines = {},     -- Lines that you wish to be randomized
-    file = nil,     -- File with lines you wish to be randomized
+    lines = {},                 -- Lines that you wish to be randomized
+    file = nil,                 -- File with lines you wish to be randomized
     -- Both "lines" and "file" are imported.
+
+    oneline = true,             -- Show quote as prompt (need to type something to unfocus)
+                                -- or a oneliner at the bottom
+    execute_on_startup = true   -- Execute on startup ("VimEnter")
 })
 ```
 
